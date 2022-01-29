@@ -1,0 +1,23 @@
+.jacob {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px;
+    text-align: center;
+}
+
+img {
+    height: 4in;
+}
+
+h1, h3 {
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    color: white;
+    line-height: 70%;
+}
+
+.subtitle {
+    font-size: 16pt;
+    color: #adadad;
+}
