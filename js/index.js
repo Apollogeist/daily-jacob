@@ -37,18 +37,27 @@ function right() {
 }
 
 function search() {
-    const input = window.prompt("Where to? (jacob #)");
+    const input = window.prompt("Where to? (page #, 'latest', or 'random')");
     
     /** @type {Number} */
     let page;
 
-    page = Number.parseInt(input);
+    switch (input) {
+        case "latest":
+            page = data.list.length;
+            break
+        case "random":
+            page = Math.ceil(Math.random() * data.list.length)
+            break;
+        default:
+            page = Number.parseInt(input);
 
-    if (isNaN(page)) {
-        return;
-    } else if (page < 1 || page > data.list.length) {
-        window.alert(`Page #${page} doesn't exist!`);
-        return;
+            if (isNaN(page)) {
+                return;
+            } else if (page < 1 || page > data.list.length) {
+                window.alert(`Page #${page} doesn't exist!`);
+                return;
+            }
     }
 
     currentIndex = page - 1;
@@ -60,7 +69,6 @@ function search() {
  */
 async function initializeJacob() {
     data = await updateData();
-    console.log(data);
     currentIndex = data.list.length - 1;
 
     initializeMeta();
@@ -106,14 +114,12 @@ function displayJacob() {
  * @returns {JacobData} Response from the server
  */
 async function updateData() {
-    console.log("Fetching info...");
 
     let data;
 
     await fetch(resourceURL + "list.json")
         .then(response => response.json())
         .then(d => {
-            console.log("Info fetched!");
             data = d;
         });
 
