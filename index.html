@@ -2,16 +2,23 @@
     <head>
         <title>Daily Jacob</title>
         <link rel="stylesheet" href="css/style.css">
+
+        <meta property="og:url" content="https://dailyjacob.com/">
+        <meta property="og:type" content="website">
+        <meta property="og:title" content="Daily Jacob">
+        <meta property="og:description" content="JACOBZZZZ WRLDDD!!!!!!!">
+        <meta property="og:image" content="https://cdn.dailyjacob.com/daily/1-anders_cmp.jpg">
     </head>
-    <body>
+    <body onload="initializeJacob()">
         <div class="jacob-div">
             <img id="load" class="load" src="img/tile.png" style="display: none;">
             <img id="jacob" class="jacob" src="" alt="ratio" onload="displayJacob()">
             <h4 id="photo-credit" class="photo-credit caption">📷: Nobody</h4>
             <h1 id="title" class="title caption">Loading your Daily Jacob...</h1>
             <h3 id="description" class="description caption"></h3><br>
-            <button class="btn left-button" onclick="left()">🡸</button>
-            <button class="btn right-button" onclick="right()">🡺</button>
+            <button class="btn btn-left" onclick="left()">🡸</button>
+            <button class="btn btn-right" onclick="right()">🡺</button>
+            <button class="btn btn-search" onclick="search()">🔎</button>
         </div>
         <script src="js/index.js"></script>
     </body>

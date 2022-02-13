@@ -29,18 +29,27 @@
     background-color: #ff9100;
 }
 
-.left-button {
+.btn-left {
     position: absolute;
     float: left;
     left: 7px;
     bottom: 7px;
 }
 
-.right-button {
+.btn-right {
     position: absolute;
     float: right;
     right: 7px;
     bottom: 7px;
+}
+
+.btn-search {
+    text-align: center;
+    position: absolute;
+    float: inherit;
+    left: 50%;
+    bottom: 7px;
+    transform: translate(-50%, 0);
 }
 
 .jacob {
