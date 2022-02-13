@@ -3,36 +3,82 @@
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    padding: 30px 30px 10px 30px;
     text-align: center;
+    padding: 30px 30px 30px 30px;
     outline: 3px dashed #ff9100;
 }
 
+.btn {
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 900;
+    padding: 8px 14px;
+    color: #ff9100;
+    background-color: transparent;
+    border: 2px solid #ff9100;
+    border-radius: 8px;
+    transition: all 170ms;
+}
+
+/* .btn:hover {
+    color: #d17600;
+    border-color: #d17600;
+} */
+
+.btn:hover {
+    color: #ffffff;
+    background-color: #ff9100;
+}
+
+.left-button {
+    position: absolute;
+    float: left;
+    left: 7px;
+    bottom: 7px;
+}
+
+.right-button {
+    position: absolute;
+    float: right;
+    right: 7px;
+    bottom: 7px;
+}
+
 .jacob {
-    height: 4in;
+    height: 6in;
     box-shadow: 0px 0px 20px #000;
 }
 
 .caption {
     font-family: 'Courier New', Courier, monospace;
     text-align: left;
-    max-width: 400px;
     line-height: 70%;
     text-shadow: 2px 2px 4px #000000;
 }
 
 .title {
+    font-size: 30pt;
+    max-width: 6in;
     color: #ff9100;
 }
 
 .description {
-    font-size: 16pt;
+    font-size: 20pt;
+    max-width: 6in;
+    line-height: 100%;
     color: #ffffff;
 }
 
 .photo-credit {
-    font-size: 10pt;
+    font-size: 12pt;
     text-align: center;
+    color: #ffffff7c;
+}
+
+.index-number {
+    font-size: 20pt;
+    font-style: italic;
+    text-align: center;
+    vertical-align: middle;
     color: #ffffff7c;
 }
 

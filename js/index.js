@@ -27,40 +27,45 @@ async function initializeJacob() {
     console.log(data);
     currentIndex = data.list.length - 1;
 
-    getJacob(0)
-    //getJacob(currentIndex)
+    getJacob(currentIndex)
+}
+
+function left() {
+    if (currentIndex <= 0)
+        return;
+
+    currentIndex--;
+    getJacob(currentIndex);
+}
+
+function right() {
+    if (currentIndex >= data.list.length - 1)
+        return;
+
+    currentIndex++;
+    getJacob(currentIndex);
 }
 
 async function getJacob(i) {
-    console.log("Getting Jacob #" + i);
-
-    const jacobImage = document.getElementById("jacob");
-    const loadingImage = document.getElementById("load");
-    
-    jacobImage.style.display = "none";
-    loadingImage.style.display = "inline";
-
     const entry = data.list[i];
 
-    console.log("Fetching image...");
-
     // Retrieve current Jacob image from entry
-    await fetch(resourceURL + entry.path)
-        .then(response => response.blob())
-        .then(data => updateJacob(entry, data));
-
-    jacobImage.style.display = "inline";
-    loadingImage.style.display = "none";
-
-    console.log("Done fetching");
+    document.getElementById("jacob").src = resourceURL + entry.path;
 }
 
 /**
  * 
  * @param {JacobEntry} entry 
- * @param {Blob} image 
+ * @param {Blob} imageURL 
  */
-function updateJacob(entry, image) {
+function updateJacob(entry) {
+    // Update Jacob image
+    document.getElementById("jacob").src = resourceURL + entry.path;
+}
+
+function displayJacob() {
+    let entry = data.list[currentIndex];
+
     let title = entry.title;
     let desc = entry.description;
     let credit = entry.photoCredit;
@@ -70,13 +75,9 @@ function updateJacob(entry, image) {
     const descElement = document.getElementById("description");
     const creditElement = document.getElementById("photo-credit");
 
-    titleElement.innerHTML = title;
+    titleElement.innerHTML = `${title} <span class="index-number">(#${currentIndex + 1})</span>`;
     descElement.innerHTML = desc;
     creditElement.innerHTML = "📷: " + credit;
-
-    // Update Jacob image
-    const imageObjectURL = URL.createObjectURL(image);
-    document.getElementById("jacob").src = imageObjectURL;
 }
 
 /**
