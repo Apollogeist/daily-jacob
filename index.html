@@ -11,16 +11,18 @@
     </head>
     <body onload="initializeJacob()">
         <div class="jacob-div">
-            <img id="load" class="load" src="img/tile.png" style="display: none;">
-            <img id="jacob" class="jacob" src="" alt="ratio" onload="displayJacob()">
-            <h4 id="photo-credit" class="photo-credit caption">📷: Nobody</h4>
-            <h1 id="title" class="title caption">Loading your Daily Jacob...</h1>
-            <h3 id="description" class="description caption"></h3><br>
-            <div class="navigation">
-                <button class="btn" onclick="left()">🡸</button>
-                <button class="btn" onclick="search()">🔎</button>
-                <button class="btn" onclick="right()">🡺</button>
+            <div class="content">
+                <img id="load" class="load" src="img/tile.png" style="display: none;">
+                <img id="jacob" class="jacob" src="" alt="ratio" onload="displayJacob()">
+                <h4 id="photo-credit" class="photo-credit caption">📷: Nobody</h4>
+                <h1 id="title" class="title caption">Loading your Daily Jacob...</h1>
+                <h3 id="description" class="description caption"></h3><br>
             </div>
+        </div>
+        <div class="navigation">
+            <button class="btn" onclick="left()" disabled>🡸</button>
+            <button class="btn" onclick="search()">🔎</button>
+            <button class="btn" onclick="right()">🡺</button>
         </div>
         <script src="js/index.js"></script>
     </body>
