@@ -21,16 +21,28 @@ var currentIndex;
 var data;
 
 function left() {
-    if (currentIndex <= 0)
+    if (currentIndex <= 0) {
         return;
+    } else if (currentIndex == 1) {
+        // Destination page is the first ever image
+        document.getElementById("btn-left").disabled = true;
+    } else {
+        document.getElementById("btn-left").disabled = false;
+    }
 
     currentIndex--;
     updateJacobImage(currentIndex);
 }
 
 function right() {
-    if (currentIndex >= data.list.length - 1)
+    if (currentIndex >= data.list.length - 1) {
         return;
+    } else if (data.list.length - 2) {
+        // Destination page is the most recent image
+        document.getElementById("btn-right").disabled = true;
+    } else {
+        document.getElementById("btn-right").disabled = false;
+    }
 
     currentIndex++;
     updateJacobImage(currentIndex);
